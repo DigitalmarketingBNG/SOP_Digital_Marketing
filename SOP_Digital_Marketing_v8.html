@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SOP – Digital Marketing | Black n Green</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --black: #0a0a0a;
+      --green: #2ecc71;
+      --green-dark: #1a9e52;
+      --green-light: #e8faf0;
+      --green-mid: #c6f0d9;
+      --white: #ffffff;
+      --gray-100: #f5f5f5;
+      --gray-200: #e8e8e8;
+      --gray-400: #aaa;
+      --gray-600: #555;
+      --gray-800: #222;
+      --radius: 12px;
+      --shadow: 0 2px 16px rgba(0,0,0,0.07);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #f7f8f5;
+      color: var(--gray-800);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--black);
+      color: var(--white);
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 18px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-dot {
+      width: 10px; height: 10px;
+      background: var(--green);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .brand-name {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+    }
+    .doc-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--white);
+      background: rgba(46,204,113,0.15);
+      border: 1px solid rgba(46,204,113,0.3);
+      border-radius: 6px;
+      padding: 4px 12px;
+      font-family: 'DM Mono', monospace;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── HERO BANNER ── */
+    .hero {
+      background: var(--black);
+      color: var(--white);
+      padding: 56px 32px 48px;
+      text-align: center;
+    }
+    .hero-tag {
+      display: inline-block;
+      background: var(--green);
+      color: var(--black);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 span { color: var(--green); }
+    .hero-sub {
+      color: var(--gray-400);
+      font-size: 14px;
+      font-weight: 400;
+      margin-bottom: 28px;
+    }
+    .hero-meta {
+      display: inline-flex;
+      gap: 24px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 12px 24px;
+      font-size: 12px;
+      color: var(--gray-400);
+    }
+    .hero-meta span { display: flex; align-items: center; gap: 6px; }
+    .hero-meta .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+
+    /* ── MAIN LAYOUT ── */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    /* ── PURPOSE CARD ── */
+    .purpose-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--green);
+      padding: 28px 32px;
+      margin-bottom: 36px;
+      box-shadow: var(--shadow);
+    }
+    .purpose-card h2 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--green-dark);
+      margin-bottom: 10px;
+    }
+    .purpose-card p {
+      color: var(--gray-600);
+      font-size: 14.5px;
+      line-height: 1.75;
+    }
+
+    /* ── GOALS ROW ── */
+    .goals-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+    .goal-pill {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 18px 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--gray-200);
+    }
+    .goal-icon {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      background: var(--green-light);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 15px;
+    }
+    .goal-text {
+      font-size: 13px;
+      color: var(--gray-800);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* ── SCOPE CARD ── */
+    .scope-card {
+      background: var(--black);
+      color: var(--white);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .scope-card h2 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--green);
+      margin-bottom: 16px;
+    }
+    .scope-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .scope-item {
+      background: rgba(255,255,255,0.07);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 13.5px;
+      font-weight: 500;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .scope-item::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .scope-note {
+      color: var(--gray-400);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    /* ── SECTION CARDS ── */
+    .section-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--gray-200);
+      overflow: hidden;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--gray-200);
+      background: var(--gray-100);
+    }
+    .section-num {
+      width: 34px; height: 34px;
+      border-radius: 8px;
+      background: var(--black);
+      color: var(--green);
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .section-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--gray-800);
+      letter-spacing: -0.01em;
+    }
+    .section-body {
+      padding: 22px 24px;
+    }
+
+    /* ── RULES LIST ── */
+    .rules-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .rules-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+    .rules-list li::before {
+      content: '';
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+    .rules-list li strong { color: var(--gray-800); }
+
+    /* ── SUB POINTS ── */
+    .sub-list {
+      list-style: none;
+      margin-top: 8px;
+      margin-left: 17px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .sub-list li {
+      font-size: 13.5px;
+      color: var(--gray-600);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .sub-list li::before {
+      content: '—';
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+      line-height: 1.6;
+    }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight-box {
+      background: var(--green-light);
+      border: 1px solid var(--green-mid);
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 14px 0 4px;
+      font-size: 13.5px;
+      color: var(--green-dark);
+      font-weight: 500;
+      display: flex; align-items: flex-start; gap: 10px;
+    }
+    .highlight-box::before { content: '💡'; flex-shrink: 0; }
+
+    /* ── WARNING BOX ── */
+    .warning-box {
+      background: #fff8e6;
+      border: 1px solid #ffe0a0;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 14px 0 4px;
+      font-size: 13.5px;
+      color: #8a6000;
+      font-weight: 500;
+      display: flex; align-items: flex-start; gap: 10px;
+    }
+    .warning-box::before { content: '⚠️'; flex-shrink: 0; }
+
+    /* ── POD NOTE ── */
+    .pod-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--black);
+      color: var(--green);
+      font-family: 'DM Mono', monospace;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      padding: 3px 10px;
+      border-radius: 5px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black);
+      color: var(--gray-400);
+      text-align: center;
+      padding: 24px 32px;
+      font-size: 12.5px;
+      letter-spacing: 0.03em;
+    }
+    footer span { color: var(--green); font-weight: 600; }
+
+    @media (max-width: 600px) {
+      .hero { padding: 40px 20px 36px; }
+      .hero-meta { flex-direction: column; gap: 10px; }
+      .section-header, .section-body { padding: 16px 18px; }
+      .purpose-card { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-dot"></div>
+      <span class="brand-name">Black n Green</span>
+    </div>
+    <div class="doc-title">SOP · Digital Marketing</div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">Internal Document</div>
+  <h1>Digital <span>Marketing</span><br>Standard Operating Procedure</h1>
+  <div class="hero-sub">How we run campaigns.</div>
+
+</div>
+
+<!-- MAIN -->
+<main>
+
+  <!-- PURPOSE -->
+  <div class="purpose-card">
+    <h2>Purpose</h2>
+    <p>
+      This document exists to give everyone a smooth, shared framework for running digital campaigns at Black n Green.
+      It covers how we set campaign goals, get budgets approved, allocate spend month-by-month, and keep performance better.
+    </p>
+  </div>
+
+  <!-- GOALS -->
+  <div class="goals-row">
+    <div class="goal-pill">
+      <div class="goal-icon">📊</div>
+      <div class="goal-text">Keep budgets on track and well-managed</div>
+    </div>
+    <div class="goal-pill">
+      <div class="goal-icon">🎯</div>
+      <div class="goal-text">Maintain strong CPA and revenue efficiency</div>
+    </div>
+    <div class="goal-pill">
+      <div class="goal-icon">📈</div>
+      <div class="goal-text">Enable smart, structured scaling decisions</div>
+    </div>
+    <div class="goal-pill">
+      <div class="goal-icon">🛡️</div>
+      <div class="goal-text">Prevent financial and compliance risks</div>
+    </div>
+  </div>
+
+  <!-- SCOPE -->
+  <div class="scope-card">
+    <h2>Who This Applies To</h2>
+    <div class="scope-grid">
+      <div class="scope-item">All Account Managers</div>
+      <div class="scope-item">Digital Marketing Team</div>
+      <div class="scope-item">Business Heads</div>
+    </div>
+    <div class="scope-note">
+      This SOP covers all digital campaigns we run — whether through affiliates, DSPs, Google, or social media platforms.
+    </div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-num">01</div>
+      <div class="section-title">Test Budget</div>
+    </div>
+    <div class="section-body">
+      <ul class="rules-list">
+        <li>Every new campaign — whether on affiliates, DSPs, Google, or social media — gets a <strong>test budget of up to USD 500</strong>.</li>
+        <li>This test budget can be used right away — <strong>no prior approval needed</strong>.</li>
+        <li>The test phase is there to help us understand:
+          <ul class="sub-list">
+            <li>Whether the traffic is good quality</li>
+            <li>How many users are converting (Conversion Rate)</li>
+            <li>What it's costing us to acquire each user (CPA)</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-num">02</div>
+      <div class="section-title">Budget Allocation &amp; Approval</div>
+    </div>
+    <div class="section-body">
+      <ul class="rules-list">
+        <li style="white-space: nowrap;">Every campaign — new or ongoing — needs a formal budget approval from Rahul Gupta before spending beyond the test<br>phase.</li>
+        <li>Once approved, the budget must be clearly mentioned.</li>
+        <li>Every budget plan should clearly mention:
+          <ul class="sub-list">
+            <li>Daily spending cap</li>
+            <li>CPA rates (provided by the Digital Team)</li>
+            <li>Total approved spend for the agreed period</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-num">03</div>
+      <div class="section-title">Scaling &amp; Extending Campaigns</div>
+    </div>
+    <div class="section-body">
+      <ul class="rules-list">
+        <li>Once a campaign has used its approved budget, the campaign will be paused until fresh approval is received from Rahul Gupta.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-num">04</div>
+      <div class="section-title">CPA Performance &amp; Optimization</div>
+    </div>
+    <div class="section-body">
+      <ul class="rules-list">
+        <li>The Digital Team proposes initial CPA rates — these must be logged in the <span class="pod-badge">POD</span> before any campaign goes live.</li>
+        <li>Expected CPA rates should be provided by the Account Managers.</li>
+        <li>CPA will be the metric on which the Digital Team will decide whether to scale, pause, or stop the campaign.</li>
+        <li>The Digital Team will try to optimize the CPA as low as possible within their operational capabilities.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 5 -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-num">05</div>
+      <div class="section-title">Caps &amp; Spend Management</div>
+    </div>
+    <div class="section-body">
+      <ul class="rules-list">
+        <li>The Digital Team must always stay within the total approved budget.</li>
+        <li>The Digital Team must always stay within the agreed daily caps.</li>
+        <li>If the daily caps are not met or the daily spend is falling short, the Digital Team will update the Account Manager and Business Head via internal WhatsApp groups stating the reason behind the same.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 6 -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-num">06</div>
+      <div class="section-title">Traffic Quality &amp; Compliance</div>
+    </div>
+    <div class="section-body">
+      <ul class="rules-list">
+        <li>The Digital Team will only operate on <strong>approved GEOs, operators, and services</strong>.</li>
+        <li>The Digital Team will try to align the traffic quality to the best of their operational capabilities.</li>
+        <li>Any partners suggested by the Account Managers or Business Head — the Digital Team will run the campaign with that partner as per their guidance and will act only as facilitators, and shall not own the responsibility of that partner running the campaign.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 7 -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-num">07</div>
+      <div class="section-title">POD — Promotion Onboarding Document</div>
+    </div>
+    <div class="section-body">
+      <ul class="rules-list">
+        <li>No campaign will be launched by the Digital Team without a fully completed <span class="pod-badge">POD</span>.</li>
+        <li>The Account Manager is responsible for filling in all mandatory POD details — including a documented business case.</li>
+        <li>Business Heads must approve the POD before any campaign goes live.</li>
+        <li>The accuracy of everything in the POD is the Business Head's responsibility.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 8 -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-num">08</div>
+      <div class="section-title">Review &amp; Governance</div>
+    </div>
+    <div class="section-body">
+      <ul class="rules-list">
+        <li>Campaigns are reviewed regularly based on CPA, CPM and revenue performance.</li>
+        <li style="white-space: nowrap;">If anyone needs to deviate from this SOP, prior written approval must be obtained from Pushpendra or Rahul Gupta —<br>otherwise the campaign will not be executed.</li>
+      </ul>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <span>Black n Green</span> · Digital Marketing SOP · Internal Use Only
+</footer>
+
+</body>
+</html>
